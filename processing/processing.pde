@@ -1,4 +1,4 @@
-import pbox2d.*;
+import shiffman.box2d.*;
 import oscP5.*;
 import netP5.*;
 
@@ -14,7 +14,7 @@ String ip = "127.0.0.1";
 int port = 9002;
 int incoming_port = 12312;
 
-PBox2D box2d;
+Box2DProcessing box2d;
 
 ArrayList<Box> boxes;
 
@@ -26,7 +26,7 @@ void setup() {
   sendMsg("/vol", 0.5);
   sendMsg("/bypass", 1);
 
-  box2d = new PBox2D(this);
+  box2d = new Box2DProcessing(this);
   box2d.createWorld();
   box2d.setGravity(0, -5);
 
@@ -145,4 +145,3 @@ class Box {
     body.setAngularVelocity(random(-5, 5));
   }
 }
-
